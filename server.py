@@ -5,7 +5,7 @@ from Models import LDAModel
 import os
 
 
-# Help method for LDA object
+# Helper method for LDA object
 lda = LDAModel.LDAModel()
 
 # Load all existing model, dictionary, index , bigram and trigram
@@ -33,7 +33,7 @@ lda_index.add_documents(new_ldaModel[new_corpus])
 
 
 #======================================================
-# Let's the Similarity 
+# Let's test the Similarity 
 vec_bow = dictionary.doc2bow(TrainingPhrase.split(" "))
 vec_model =  lda_model[vec_bow]
 sims = lda_index[vec_model]
