@@ -26,7 +26,9 @@ new_dictionary = GensimUtil.generate_dictionary(Config.training_file, applyExtre
 new_corpus = GensimUtil.generate_corpus(Config.training_file, applyExtreem = False)
 new_ldaModel =  lda.create_model(new_dictionary, new_corpus)
 
-# Add new dictionary, cropus etc to existing one
+# ========================================
+# Train the new document with existing one
+# ========================================
 GensimUtil.add_doc_to_dictionary(dictionary, new_dictionary)
 lda_model.update(new_corpus)
 lda_index.add_documents(new_ldaModel[new_corpus])
